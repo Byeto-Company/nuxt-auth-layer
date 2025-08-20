@@ -1,8 +1,8 @@
 import { fileURLToPath } from "node:url";
 
 export default defineNuxtConfig({
-    extends: [".."],
-    modules: ["@nuxt/eslint"],
+    extends: ["github:Byeto-Company/nuxt-api-layer", ".."],
+    modules: ["@nuxt/eslint", "@nuxtjs/i18n", "@vueuse/nuxt"],
     eslint: {
         config: {
             // Use the generated ESLint config for lint root project as well
