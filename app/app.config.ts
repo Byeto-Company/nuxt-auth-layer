@@ -1,12 +1,6 @@
-export default defineAppConfig({
-    
-});
+export default defineAppConfig({});
 
-// declare module "@nuxt/schema" { 
-//     interface AppConfigInput {
-//         authLayer?: {
-//             /** Project name */
-//             name?: string;
-//         };
-//     }
-// }
+declare global {
+    type AccountProfile = unknown;
+    type UpdateAccountProfile = unknown;
+}

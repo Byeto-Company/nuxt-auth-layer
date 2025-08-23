@@ -4,7 +4,7 @@ import { API_ENDPOINTS } from "../constants/api-endpoints";
 
 // types
 
-export type DevelopSignInRequest = any;
+export type DevelopSignInRequest = unknown;
 
 export type DevelopSignInResponse = {
     access: string;
