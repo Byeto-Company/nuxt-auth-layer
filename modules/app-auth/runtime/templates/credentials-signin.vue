@@ -157,12 +157,7 @@ const handleLogin = async () => {
                         class="transition-all active:translate-y-1 hover:brightness-115 hover:bg-blue-500/10 cursor-pointer border-2 border-blue-500 h-[50px] text-blue-500 rounded-xl w-full"
                         @click="sendOtpHandler"
                     >
-                        <template v-if="sendOtpIsPending">
-                            <Icon
-                                name="svg-spinners:180-ring-with-bg"
-                                class="size-[40px]"
-                            />
-                        </template>
+                        <template v-if="sendOtpIsPending"> درحال بارگیری </template>
                         <template v-else>
                             ارسال کد
                             {{ isResendOtpBlocked ? otpBlockerTimePassed : "" }}
@@ -175,12 +170,7 @@ const handleLogin = async () => {
                         class="transition-all active:translate-y-1 hover:brightness-115 cursor-pointer bg-teal-500 h-[50px] text-white rounded-xl w-full"
                         @click="handleLogin"
                     >
-                        <template v-if="signInIsPending">
-                            <Icon
-                                name="svg-spinners:180-ring-with-bg"
-                                class="size-[40px]"
-                            />
-                        </template>
+                        <template v-if="signInIsPending"> درحال بارگیری </template>
                         <template v-else> ورود به سایت </template>
                     </button>
                 </div>
