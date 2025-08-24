@@ -20,7 +20,9 @@
         "vue": "latest"
     },
     "dependencies": {
+        "@internationalized/date": "^3.8.2",
         "@nuxtjs/i18n": "^10.0.6",
+        "@tailwindcss/vite": "^4.1.12",
         "@tanstack/vue-query": "^5.85.5",
         "@tanstack/vue-query-devtools": "^5.85.5",
         "@vuelidate/core": "^2.0.3",
@@ -29,6 +31,7 @@
         "@vueuse/nuxt": "^13.7.0",
         "@vueuse/router": "^13.7.0",
         "axios": "^1.11.0",
-        "documentation": "^14.0.3"
+        "documentation": "^14.0.3",
+        "tailwindcss": "^4.1.12"
     }
 }
