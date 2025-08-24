@@ -63,34 +63,25 @@ const sendOtpHandler = async () => {
     await formValidator$.value.$validate();
 
     if (!sendOtpIsPending.value && !formValidator$.value.$errors.length) {
-        try {
-            await sendOtp({
+        await sendOtp(
+            {
                 phone: loginInfo.value.phone,
-            });
-            resetOtpBlocker();
-            startOtpBlocker();
+            },
+            {
+                onSuccess: () => {
+                    resetOtpBlocker();
+                    startOtpBlocker();
 
-            alert("code sent");
+                    alert("code sent");
 
-            // addToast({
-            //     message: "کد برای شما ارسال شد",
-            //     options: {
-            //         status: "success",
-            //     },
-            // });
-
-            showOtp.value = true;
-        } catch (e) {
-            alert("problem with sending code");
-            resetOtpBlocker();
-
-            // addToast({
-            //     message: "مشکلی پیش آمده",
-            //     options: {
-            //         status: "error",
-            //     },
-            // });
-        }
+                    showOtp.value = true;
+                },
+                onError: () => {
+                    alert("problem with sending code");
+                    resetOtpBlocker();
+                },
+            }
+        );
     }
 };
 
@@ -102,32 +93,28 @@ const handleLogin = async () => {
             await sendOtpHandler();
         }
     } else {
-        try {
-            const response = await signIn({
+        const response = await signIn(
+            {
                 otp: otpCode.value,
                 phone: loginInfo.value.phone,
-            });
+            },
+            {
+                onSuccess: async () => {
+                    updateToken(response.access);
+                    updateRefreshToken(response.refresh);
+                    await new Promise((resolve) => setTimeout(resolve, 1000));
+                    await refetchAccount();
 
-            updateToken(response.access);
-            updateRefreshToken(response.refresh);
-            await new Promise((resolve) => setTimeout(resolve, 1000));
-            await refetchAccount();
+                    alert("signed in");
 
-            // addToast({
-            //     message: "با موفقیت وارد شدید",
-            //     options: {
-            //         status: "success",
-            //     },
-            // });
-
-            alert("signed in");
-
-            window.location.href = "/";
-        } catch (e) {
-            otpCode.value = "";
-            // addToast({ message: "مشکلی پیش آمده" });
-            alert("problem with sign in");
-        }
+                    window.location.href = "/";
+                },
+                onError: () => {
+                    otpCode.value = "";
+                    alert("problem with sign in");
+                },
+            }
+        );
     }
 };
 </script>
@@ -167,8 +154,8 @@ const handleLogin = async () => {
                                 ? 'opacity-30'
                                 : ''
                         "
-                        @click="sendOtpHandler"
                         class="transition-all active:translate-y-1 hover:brightness-115 hover:bg-blue-500/10 cursor-pointer border-2 border-blue-500 h-[50px] text-blue-500 rounded-xl w-full"
+                        @click="sendOtpHandler"
                     >
                         <template v-if="sendOtpIsPending">
                             <Icon
@@ -185,8 +172,8 @@ const handleLogin = async () => {
                     <button
                         :disable="formValidator$.phone.$error || otpCode.length !== otpInputsCount"
                         :class="formValidator$.phone.$error || otpCode.length !== otpInputsCount ? 'opacity-30' : ''"
-                        @click="handleLogin"
                         class="transition-all active:translate-y-1 hover:brightness-115 cursor-pointer bg-teal-500 h-[50px] text-white rounded-xl w-full"
+                        @click="handleLogin"
                     >
                         <template v-if="signInIsPending">
                             <Icon
