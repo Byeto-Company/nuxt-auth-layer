@@ -5,10 +5,6 @@ import { useJwt } from "@vueuse/integrations/useJwt";
 
 // state
 
-definePageMeta({
-    layout: "none",
-});
-
 const { token, refreshToken, updateToken, updateRefreshToken, logout, isLoggedIn } = useAuth();
 const { refetch: refetchAccount } = useGetAccount();
 const { mutateAsync: developSignIn, isPending: isDevelopSignInPending } = useDevelopSignin();
@@ -61,17 +57,17 @@ const signOutHandler = async () => {
 
 <template>
     <div
-        class="size-full"
+        class="size-full h-screen bg-neutral-950"
         dir="ltr"
     >
         <div class="w-full flex flex-col gap-8 p-12">
             <div class="flex items-center gap-2">
-                <span class="text-xl font-semibold"> Today :</span>
+                <span class="text-xl text-blue-400"> Today :</span>
 
                 <UBadge
                     variant="subtle"
                     size="xl"
-                    class="w-fit tracking-wider px-2.5"
+                    class="w-fit font-semibold tracking-wider px-2.5 text-white"
                 >
                     {{ todayText }}
                 </UBadge>
@@ -79,74 +75,56 @@ const signOutHandler = async () => {
 
             <div class="grid grid-cols-2 gap-4 w-full">
                 <div class="bg-neutral-900 p-6 rounded-xl flex flex-col gap-4">
-                    <UBadge
-                        variant="soft"
-                        class="w-fit"
-                    >
-                        Access Token
-                    </UBadge>
+                    <div class="w-fit text-white">Access Token</div>
                     <div class="w-full break-words text-neutral-300">
                         {{ token ?? "You are signed out" }}
                     </div>
-                    <div v-if="token">
-                        <UBadge
-                            class="tracking-wider px-2.5"
-                            variant="soft"
-                            color="neutral"
-                            size="lg"
-                        >
-                            {{ tokenDetails.accessExp }}
-                        </UBadge>
+                    <div
+                        v-if="token"
+                        class="tracking-wider px-2.5"
+                    >
+                        {{ tokenDetails.accessExp }}
                     </div>
                 </div>
                 <div class="bg-neutral-900 p-6 rounded-xl flex flex-col gap-4">
-                    <UBadge
-                        variant="soft"
-                        class="w-fit"
-                    >
-                        Refresh Token
-                    </UBadge>
+                    <div class="w-fit text-white">Refresh Token</div>
                     <div class="w-full break-words text-neutral-300">
                         {{ refreshToken ?? "You are signed out" }}
                     </div>
-                    <div v-if="refreshToken">
-                        <UBadge
-                            class="tracking-wider px-2.5"
-                            variant="soft"
-                            color="neutral"
-                            size="lg"
-                        >
-                            {{ tokenDetails.refreshExp }}
-                        </UBadge>
+                    <div
+                        v-if="refreshToken"
+                        class="tracking-wider px-2.5"
+                    >
+                        {{ tokenDetails.refreshExp }}
                     </div>
                 </div>
             </div>
 
             <div class="flex items-center gap-4">
-                <UButton
+                <button
+                    class="bg-blue-400 px-4 py-2 rounded-lg"
+                    :disabled="isDevelopSignInPending"
+                    :class="
+                        isDevelopSignInPending
+                            ? 'grayscale'
+                            : 'cursor-pointer active:translate-y-0.5 transition-transform'
+                    "
                     @click="signInHandler"
-                    :loading="isDevelopSignInPending"
-                    variant="subtle"
                 >
-                    Sign In With Develop Token
-                    <UIcon
-                        name="fa-solid:arrow-right"
-                        class="text-base"
-                    />
-                </UButton>
+                    {{ isDevelopSignInPending ? "Loading..." : "Sign In With Develop Token" }}
+                </button>
                 <UButton
-                    v-if="isLoggedIn"
+                    v-if="!isLoggedIn"
+                    class="bg-rose-400 px-4 py-2 rounded-lg"
+                    :class="
+                        isDevelopSignInPending
+                            ? 'grayscale'
+                            : 'cursor-pointer active:translate-y-0.5 transition-transform'
+                    "
+                    :disabled="isDevelopSignInPending"
                     @click="signOutHandler"
-                    :loading="isDevelopSignInPending"
-                    color="error"
-                    variant="subtle"
-                    :disabled="!isLoggedIn"
                 >
                     Logout
-                    <UIcon
-                        name="fa-solid:arrow-right-from-bracket"
-                        class="text-base"
-                    />
                 </UButton>
             </div>
         </div>
