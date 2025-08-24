@@ -64,13 +64,11 @@ const signOutHandler = async () => {
             <div class="flex items-center gap-2">
                 <span class="text-xl text-blue-400"> Today :</span>
 
-                <UBadge
-                    variant="subtle"
-                    size="xl"
+                <div
                     class="w-fit font-semibold tracking-wider px-2.5 text-white"
                 >
                     {{ todayText }}
-                </UBadge>
+                </div>
             </div>
 
             <div class="grid grid-cols-2 gap-4 w-full">
@@ -113,7 +111,7 @@ const signOutHandler = async () => {
                 >
                     {{ isDevelopSignInPending ? "Loading..." : "Sign In With Develop Token" }}
                 </button>
-                <UButton
+                <button
                     v-if="!isLoggedIn"
                     class="bg-rose-400 px-4 py-2 rounded-lg"
                     :class="
@@ -125,7 +123,7 @@ const signOutHandler = async () => {
                     @click="signOutHandler"
                 >
                     Logout
-                </UButton>
+                </button>
             </div>
         </div>
     </div>
