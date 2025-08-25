@@ -1,4 +1,4 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    css: ["~/app/assets/dist.css"],
+    css: ["./app/assets/dist.css"],
 });
