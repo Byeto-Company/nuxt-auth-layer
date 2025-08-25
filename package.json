@@ -10,7 +10,9 @@
         "generate": "nuxt generate .playground",
         "preview": "nuxt preview .playground",
         "lint": "eslint .",
-        "gdoc": "documentation build app/**/*.ts --parse-extension ts -f html -o docs && bun scripts/replace-documentation-theme/index.ts"
+        "gdoc": "documentation build app/**/*.ts --parse-extension ts -f html -o docs && bun scripts/replace-documentation-theme/index.ts",
+        "css:watch": "npx @tailwindcss/cli -i ./.playground/assets/tailwind.css -o ./.playground/assets/dist.css --watch --minify",
+        "css:build": "npx @tailwindcss/cli -i ./.playground/assets/tailwind.css -o ./.playground/assets/dist.css --minify"
     },
     "devDependencies": {
         "@nuxt/eslint": "latest",
@@ -22,7 +24,7 @@
     "dependencies": {
         "@internationalized/date": "^3.8.2",
         "@nuxtjs/i18n": "^10.0.6",
-        "@tailwindcss/vite": "^4.1.12",
+        "@tailwindcss/cli": "^4.1.12",
         "@tanstack/vue-query": "^5.85.5",
         "@tanstack/vue-query-devtools": "^5.85.5",
         "@vuelidate/core": "^2.0.3",
