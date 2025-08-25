@@ -13,13 +13,23 @@ type UpdateAccountProfile = unknown;
 
 These types are used internally in the layer for account-related operations but can be redefined in the main app to suit specific needs.
 
+And this is the app config options:
+
+```ts
+{
+    appAuth?: {
+        unauthorizedEvent?: (error: ApiError) => void;
+    };
+}
+```
+
 ---
 
 ## Installation
 
 ```bash
 npm i @nuxtjs/i18n @tanstack/vue-query @tanstack/vue-query-devtools @vueuse/integrations @vueuse/nuxt @vueuse/router axios
-```
+````
 
 Add these layers to extend in nuxt.config.ts ( also check their dependencies ):
 
