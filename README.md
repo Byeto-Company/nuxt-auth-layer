@@ -17,7 +17,7 @@ And this is the app config options:
 
 ```ts
 {
-    appAuth?: {
+    authModule?: {
         unauthorizedEvent?: (error: ApiError) => void;
     };
 }
@@ -81,8 +81,8 @@ type ModuleOptions = {
 
 Based on the `internalPage` and `strategy` settings, the module provides dynamic login pages:
 
--   `modules/app-auth/runtime/templates/credentials-signin.vue`
--   `modules/app-auth/runtime/templates/otp-signin.vue`
+-   `modules/auth-module/runtime/templates/credentials-signin.vue`
+-   `modules/auth-module/runtime/templates/otp-signin.vue`
 
 ---
 

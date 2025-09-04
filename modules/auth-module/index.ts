@@ -12,8 +12,8 @@ type ModuleOptions = {
 
 export default defineNuxtModule<ModuleOptions>({
     meta: {
-        name: "app-auth",
-        configKey: "appAuth",
+        name: "auth-module",
+        configKey: "authModule",
     },
 
     defaults: {
@@ -27,7 +27,7 @@ export default defineNuxtModule<ModuleOptions>({
     async setup(moduleOptions, nuxt) {
         const resolver = createResolver(import.meta.url);
 
-        nuxt.options.runtimeConfig.public.appAuth = defu(nuxt.options.runtimeConfig.public.appAuth, {
+        nuxt.options.runtimeConfig.public.authModule = defu(nuxt.options.runtimeConfig.public.authModule, {
             pagePath: moduleOptions.pagePath,
             otpCount: moduleOptions.otpCount,
             otpTimer: moduleOptions.otpTimer,
@@ -64,8 +64,8 @@ export default defineNuxtModule<ModuleOptions>({
         });
 
         addCustomTab({
-            name: "app-auth",
-            title: "App Auth",
+            name: "auth-module",
+            title: "Auth Module",
             icon: "lucide:lock-keyhole",
             view: {
                 type: "iframe",
