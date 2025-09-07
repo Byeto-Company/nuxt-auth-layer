@@ -11,8 +11,8 @@
         "preview": "nuxt preview .playground",
         "lint": "eslint .",
         "gdoc": "documentation build app/**/*.ts --parse-extension ts -f html -o docs && bun scripts/replace-documentation-theme/index.ts",
-        "css:watch": "npx @tailwindcss/cli -i ./.playground/assets/tailwind.css -o ./.playground/assets/dist.css --watch --minify",
-        "css:build": "npx @tailwindcss/cli -i ./.playground/assets/tailwind.css -o ./.playground/assets/dist.css --minify"
+        "css:watch": "npx @tailwindcss/cli -i ./app/assets/tailwind.css -o ./app/assets/dist.css --watch --minify",
+        "css:build": "npx @tailwindcss/cli -i ./app/assets/tailwind.css -o ./app/assets/dist.css --minify"
     },
     "devDependencies": {
         "@nuxt/eslint": "latest",
