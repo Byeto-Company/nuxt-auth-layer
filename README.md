@@ -103,4 +103,10 @@ The layer provides the following composables for managing authentication flows:
 
 ---
 
+## Components
+
+-   `app/components/AuthLayerWrapper.vue` — Wrapper for configurations
+
+---
+
 This layer is designed to provide a consistent, modular, and flexible authentication system for Nuxt applications. Global account types (`AccountProfile` and `UpdateAccountProfile`) are provided with default definitions but can be overridden in the main application to customize account data structures.
