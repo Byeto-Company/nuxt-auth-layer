@@ -12,8 +12,8 @@ export type SignOutRequest = {
  * @module composables/useSignOut
  */
 const useSignOut = () => {
-    const appConfig = useAppConfig();
-    const endpointResource = appConfig.appAuth?.endpoints.refresh;
+    const runtimeConfig = useRuntimeConfig();
+    const endpointResource = runtimeConfig.public.authModule.endpoints.logout;
 
     return useCreate<unknown, SignOutRequest>({
         customResource: endpointResource,

@@ -14,8 +14,8 @@ export type OtpRequest = {
  * @module composables/useOtp
  */
 const useOtp = () => {
-    const appConfig = useAppConfig();
-    const endpointResource = appConfig.appAuth?.endpoints.otp;
+    const runtimeConfig = useRuntimeConfig();
+    const endpointResource = runtimeConfig.public.authModule.endpoints.otp;
 
     return useCreate<unknown, OtpRequest>({
         customResource: endpointResource,

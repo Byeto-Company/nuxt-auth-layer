@@ -12,8 +12,8 @@ export type VerifyRequest = {
  * @module composables/useVerify
  */
 const useVerify = () => {
-    const appConfig = useAppConfig();
-    const endpointResource = appConfig.appAuth?.endpoints.verify;
+    const runtimeConfig = useRuntimeConfig();
+    const endpointResource = runtimeConfig.public.authModule.endpoints.verify;
 
     return useCreate<unknown, VerifyRequest>({
         customResource: endpointResource,

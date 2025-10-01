@@ -18,9 +18,9 @@ export type OtpSignInResponse = {
  * @module composables/useOtpSignin
  */
 const useOtpSignIn = () => {
-    const appConfig = useAppConfig();
-    const endpointResource = appConfig.appAuth?.endpoints.signin;
-
+    const runtimeConfig = useRuntimeConfig();
+    const endpointResource = runtimeConfig.public.authModule.endpoints.signin;
+    
     return useCreate<OtpSignInResponse, OtpSignInRequest>({
         customResource: endpointResource,
     });

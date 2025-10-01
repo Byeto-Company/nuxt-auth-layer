@@ -18,8 +18,9 @@ const useGetAccount = () => {
     // state
 
     const { token } = useAuth();
-    const appConfig = useAppConfig();
-    const endpointResource = appConfig.appAuth?.endpoints.profile;
+    
+    const runtimeConfig = useRuntimeConfig();
+    const endpointResource = runtimeConfig.public.authModule.endpoints.profile;
 
     // computed
 

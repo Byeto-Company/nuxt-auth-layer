@@ -12,8 +12,8 @@ export type UpdateAccountResponse = AccountProfile;
  * @module composables/useUpdateAccount
  */
 const useUpdateAccount = () => {
-    const appConfig = useAppConfig();
-    const endpointResource = appConfig.appAuth?.endpoints.update;
+    const runtimeConfig = useRuntimeConfig();
+    const endpointResource = runtimeConfig.public.authModule.endpoints.update;
 
     return useUpdate<UpdateAccountResponse, UpdateAccountRequest>({
         customResource: endpointResource,

@@ -17,9 +17,9 @@ export type RefreshAuthResponse = {
  * @module composables/useRefreshAuth
  */
 const useRefreshAuth = () => {
-    const appConfig = useAppConfig();
-    const endpointResource = appConfig.appAuth?.endpoints.refresh;
-
+    const runtimeConfig = useRuntimeConfig();
+    const endpointResource = runtimeConfig.public.authModule.endpoints.refresh;
+    
     return useCreate<RefreshAuthResponse, RefreshAuthRequest>({
         customResource: endpointResource,
     });
