@@ -1,7 +1,3 @@
-// imports
-
-import { API_ENDPOINTS } from "../constants/api-endpoints";
-
 // types
 
 export type DevelopSignInRequest = unknown;
@@ -11,12 +7,13 @@ export type DevelopSignInResponse = {
     refresh: string;
 };
 
-const useOtp = () => {
+const useDevelopSignin = () => {
+    const appConfig = useAppConfig();
+    const endpointResource = appConfig.appAuth?.endpoints.develop_token;
+
     return useCreate<DevelopSignInResponse, DevelopSignInRequest>({
-        customResource: {
-            path: API_ENDPOINTS.user.develop_token.path,
-        },
+        customResource: endpointResource,
     });
 };
 
-export default useOtp;
+export default useDevelopSignin;

@@ -1,7 +1,5 @@
 // imports
 
-import { API_ENDPOINTS } from "../constants/api-endpoints";
-
 // types
 
 export type OtpRequest = {
@@ -16,10 +14,11 @@ export type OtpRequest = {
  * @module composables/useOtp
  */
 const useOtp = () => {
+    const appConfig = useAppConfig();
+    const endpointResource = appConfig.appAuth?.endpoints.otp;
+
     return useCreate<unknown, OtpRequest>({
-        customResource: {
-            path: API_ENDPOINTS.user.otp.path,
-        },
+        customResource: endpointResource,
     });
 };
 

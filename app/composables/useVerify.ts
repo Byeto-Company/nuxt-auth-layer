@@ -1,7 +1,3 @@
-// imports
-
-import { API_ENDPOINTS } from "../constants/api-endpoints";
-
 // types
 
 export type VerifyRequest = {
@@ -16,10 +12,11 @@ export type VerifyRequest = {
  * @module composables/useVerify
  */
 const useVerify = () => {
+    const appConfig = useAppConfig();
+    const endpointResource = appConfig.appAuth?.endpoints.verify;
+
     return useCreate<unknown, VerifyRequest>({
-        customResource: {
-            path: API_ENDPOINTS.user.verify.path,
-        },
+        customResource: endpointResource,
     });
 };
 

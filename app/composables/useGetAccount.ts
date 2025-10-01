@@ -1,6 +1,5 @@
 // imports
 
-import { API_ENDPOINTS } from "../constants/api-endpoints";
 import useAuth from "./useAuth";
 
 // types
@@ -19,6 +18,8 @@ const useGetAccount = () => {
     // state
 
     const { token } = useAuth();
+    const appConfig = useAppConfig();
+    const endpointResource = appConfig.appAuth?.endpoints.profile;
 
     // computed
 
@@ -34,10 +35,7 @@ const useGetAccount = () => {
     // methods
 
     return useOne<GetAccountResponse>({
-        customResource: {
-            name: API_ENDPOINTS.user.profile.key,
-            path: API_ENDPOINTS.user.profile.path,
-        },
+        customResource: endpointResource,
         authorization: true,
         queryOptions: {
             enabled: isEnabled,

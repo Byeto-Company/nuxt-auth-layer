@@ -1,7 +1,3 @@
-// imports
-
-import { API_ENDPOINTS } from "../constants/api-endpoints";
-
 // types
 
 export type OtpSignInRequest = {
@@ -22,10 +18,11 @@ export type OtpSignInResponse = {
  * @module composables/useOtpSignin
  */
 const useOtpSignIn = () => {
+    const appConfig = useAppConfig();
+    const endpointResource = appConfig.appAuth?.endpoints.signin;
+
     return useCreate<OtpSignInResponse, OtpSignInRequest>({
-        customResource: {
-            path: API_ENDPOINTS.user.signin.path,
-        },
+        customResource: endpointResource,
     });
 };
 

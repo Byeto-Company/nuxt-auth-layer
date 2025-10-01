@@ -1,7 +1,3 @@
-// imports
-
-import { API_ENDPOINTS } from "../constants/api-endpoints";
-
 // types
 
 export type SignOutRequest = {
@@ -16,10 +12,11 @@ export type SignOutRequest = {
  * @module composables/useSignOut
  */
 const useSignOut = () => {
+    const appConfig = useAppConfig();
+    const endpointResource = appConfig.appAuth?.endpoints.refresh;
+
     return useCreate<unknown, SignOutRequest>({
-        customResource: {
-            path: API_ENDPOINTS.user.logout.path,
-        },
+        customResource: endpointResource,
     });
 };
 

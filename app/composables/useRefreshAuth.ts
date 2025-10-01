@@ -1,7 +1,3 @@
-// imports
-
-import { API_ENDPOINTS } from "../constants/api-endpoints";
-
 // types
 
 export type RefreshAuthRequest = {
@@ -21,10 +17,11 @@ export type RefreshAuthResponse = {
  * @module composables/useRefreshAuth
  */
 const useRefreshAuth = () => {
+    const appConfig = useAppConfig();
+    const endpointResource = appConfig.appAuth?.endpoints.refresh;
+
     return useCreate<RefreshAuthResponse, RefreshAuthRequest>({
-        customResource: {
-            path: API_ENDPOINTS.user.refresh.path,
-        },
+        customResource: endpointResource,
     });
 };
 

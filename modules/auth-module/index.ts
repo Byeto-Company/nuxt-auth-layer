@@ -1,4 +1,4 @@
-import { createResolver, defineNuxtModule, extendPages } from "@nuxt/kit";
+import { createResolver, defineNuxtModule, extendPages, useLogger } from "@nuxt/kit";
 import { defu } from "defu";
 import { addCustomTab } from "@nuxt/devtools-kit";
 
@@ -26,6 +26,16 @@ export default defineNuxtModule<ModuleOptions>({
 
     async setup(moduleOptions, nuxt) {
         const resolver = createResolver(import.meta.url);
+        const logger = useLogger("auth-layer");
+
+        nuxt.hook("app:resolve", () => {
+            const appConfig = nuxt.options.appConfig;
+
+            if (appConfig.appAuth?.endpoints === undefined) {
+                logger.box("Please provide endpoints for appAuth in app.config.ts file.");
+                process.exit(1);
+            }
+        });
 
         nuxt.options.runtimeConfig.public.authModule = defu(nuxt.options.runtimeConfig.public.authModule, {
             pagePath: moduleOptions.pagePath,

@@ -1,7 +1,3 @@
-// imports
-
-import { API_ENDPOINTS } from "../constants/api-endpoints";
-
 // types
 
 export type UpdateAccountRequest = UpdateAccountProfile;
@@ -16,10 +12,11 @@ export type UpdateAccountResponse = AccountProfile;
  * @module composables/useUpdateAccount
  */
 const useUpdateAccount = () => {
+    const appConfig = useAppConfig();
+    const endpointResource = appConfig.appAuth?.endpoints.update;
+
     return useUpdate<UpdateAccountResponse, UpdateAccountRequest>({
-        customResource: {
-            path: API_ENDPOINTS.user.profile.path,
-        },
+        customResource: endpointResource,
         contentType: "form",
         authorization: true,
     });
