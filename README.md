@@ -29,7 +29,7 @@ And this is the app config options:
 
 ```bash
 npm i @nuxtjs/i18n @tanstack/vue-query @tanstack/vue-query-devtools @vueuse/integrations @vueuse/nuxt @vueuse/router axios
-````
+```
 
 Add these layers to extend in nuxt.config.ts ( also check their dependencies ):
 
@@ -62,6 +62,16 @@ type ModuleOptions = {
     otpCount: number; // Number of digits for OTP login
     otpTimer: number; // OTP validity period in seconds
     strategy: "otp" | "credentials"; // Authentication strategy to use
+    endpoints: {
+        profile: { path: string; name: string };
+        update: { path: string; name: string };
+        refresh: { path: string; name: string };
+        verify: { path: string; name: string };
+        signin: { path: string; name: string };
+        logout: { path: string; name: string };
+        otp: { path: string; name: string };
+        develop_token: { path: string; name: string };
+    };
 };
 ```
 
@@ -74,6 +84,7 @@ type ModuleOptions = {
     otpCount: 6,
     otpTimer: 60,
     strategy: "otp",
+    endpoints: undefined
 }
 ```
 
