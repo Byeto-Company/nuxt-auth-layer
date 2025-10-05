@@ -1,7 +1,7 @@
-<script lang="ts" setup>
-useServerSideAuthCheck();
-</script>
+<script lang="ts" setup></script>
 
 <template>
-    <NuxtPage />
+    <AuthLayerWrapper check-on-server-prefetch>
+        <NuxtPage />
+    </AuthLayerWrapper>
 </template>
