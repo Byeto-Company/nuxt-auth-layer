@@ -20,8 +20,8 @@ definePageMeta({
 // state
 
 const runtimeConfig = useRuntimeConfig();
-const otpInputsCount = runtimeConfig.public.appAuth.otpCount;
-const otpInputsTimer = runtimeConfig.public.appAuth.otpTimer;
+const otpInputsCount = runtimeConfig.public.authModule.otpCount;
+const otpInputsTimer = runtimeConfig.public.authModule.otpTimer;
 
 const { updateToken, updateRefreshToken } = useAuth();
 

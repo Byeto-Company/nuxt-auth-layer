@@ -1,6 +1,6 @@
 export default defineNuxtRouteMiddleware((from, to) => {
     const runtimeConfig = useRuntimeConfig();
-    const pagePath = runtimeConfig.public.appAuth.pagePath;
+    const pagePath = runtimeConfig.public.authModule.pagePath;
 
     const { token } = useAuth();
     const localePath = useLocalePath();

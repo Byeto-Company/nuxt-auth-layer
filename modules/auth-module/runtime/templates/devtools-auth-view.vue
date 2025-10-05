@@ -15,8 +15,8 @@ const { header: accessHeader, payload: accessPayload } = useJwt(accessTokenValue
 const { header: refreshHeader, payload: refreshPayload } = useJwt(refreshTokenValue);
 
 const runtimeConfig = useRuntimeConfig();
-const otpInputsCount = runtimeConfig.public.appAuth.otpCount;
-const otpInputsTimer = runtimeConfig.public.appAuth.otpTimer;
+const otpInputsCount = runtimeConfig.public.authModule.otpCount;
+const otpInputsTimer = runtimeConfig.public.authModule.otpTimer;
 
 // computed
 
@@ -64,9 +64,7 @@ const signOutHandler = async () => {
             <div class="flex items-center gap-2">
                 <span class="text-xl text-blue-400"> Today :</span>
 
-                <div
-                    class="w-fit font-semibold tracking-wider px-2.5 text-white"
-                >
+                <div class="w-fit font-semibold tracking-wider px-2.5 text-white">
                     {{ todayText }}
                 </div>
             </div>
@@ -79,7 +77,7 @@ const signOutHandler = async () => {
                     </div>
                     <div
                         v-if="token"
-                        class="tracking-wider px-2.5"
+                        class="tracking-wider px-2.5 text-emerald-500"
                     >
                         {{ tokenDetails.accessExp }}
                     </div>
@@ -91,7 +89,7 @@ const signOutHandler = async () => {
                     </div>
                     <div
                         v-if="refreshToken"
-                        class="tracking-wider px-2.5"
+                        class="tracking-wider px-2.5 text-emerald-500"
                     >
                         {{ tokenDetails.refreshExp }}
                     </div>
