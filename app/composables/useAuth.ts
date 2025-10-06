@@ -20,14 +20,26 @@ const useAuth = () => {
      * @type {Ref<string>}
      * @memberof composables/useAuth
      */
-    const token = useCookie("token");
+    const token = useCookie("token", {
+        maxAge: 60 * 60 * 24 * 30,
+        expires: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
+        path: "/",
+        secure: true,
+        sameSite: "lax",
+    });
 
     /**
      * Reactive cookie ref storing the refresh token.
      * @type {Ref<string>}
      * @memberof composables/useAuth
      */
-    const refreshToken = useCookie("refresh-token");
+    const refreshToken = useCookie("refresh-token", {
+        maxAge: 60 * 60 * 24 * 30,
+        expires: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
+        path: "/",
+        secure: true,
+        sameSite: "lax",
+    });
 
     // methods
 
