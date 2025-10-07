@@ -15,15 +15,16 @@
     },
     "devDependencies": {
         "@nuxt/eslint": "latest",
+        "@tailwindcss/cli": "^4.1.14",
         "eslint": "^9.33.0",
         "nuxt": "^4.0.3",
+        "tailwindcss": "^4.1.14",
         "typescript": "^5.9.2",
         "vue": "latest"
     },
     "dependencies": {
         "@internationalized/date": "^3.8.2",
         "@nuxtjs/i18n": "^10.0.6",
-        "@tailwindcss/cli": "^4.1.12",
         "@tanstack/vue-query": "^5.85.5",
         "@tanstack/vue-query-devtools": "^5.85.5",
         "@vuelidate/core": "^2.0.3",
@@ -31,7 +32,6 @@
         "@vueuse/integrations": "^13.7.0",
         "@vueuse/nuxt": "^13.7.0",
         "@vueuse/router": "^13.7.0",
-        "axios": "^1.11.0",
-        "tailwindcss": "^4.1.12"
+        "axios": "^1.11.0"
     }
 }
