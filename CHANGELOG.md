@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/Byeto-Company/nuxt-auth-layer/compare/v1.0.0...v1.1.0) (2025-11-02)
+
+
+### Features
+
+* This is also test ([dbc6c06](https://github.com/Byeto-Company/nuxt-auth-layer/commit/dbc6c066dbf012dc22652e6b84d4d9257af3208e))
+
 # 1.0.0 (2025-11-02)
 
 
