@@ -1,8 +1,11 @@
 {
     "name": "nuxt-auth-layer",
     "type": "module",
-    "version": "2.2.1",
+    "version": "1.0.0",
     "main": "./nuxt.config.ts",
+    "publishConfig": {
+        "access": "public"
+    },
     "scripts": {
         "dev": "nuxi dev .playground",
         "dev:prepare": "nuxt prepare .playground",
@@ -15,9 +18,14 @@
     },
     "devDependencies": {
         "@nuxt/eslint": "latest",
+        "@semantic-release/changelog": "^6.0.3",
+        "@semantic-release/git": "^10.0.1",
+        "@semantic-release/github": "^12.0.1",
+        "@semantic-release/npm": "^13.1.1",
         "@tailwindcss/cli": "^4.1.14",
         "eslint": "^9.33.0",
         "nuxt": "^4.0.3",
+        "semantic-release": "^25.0.1",
         "tailwindcss": "^4.1.14",
         "typescript": "^5.9.2",
         "vue": "latest"
