@@ -9,7 +9,7 @@ export type DevelopSignInResponse = {
 
 const useDevelopSignin = () => {
     const runtimeConfig = useRuntimeConfig();
-    const endpointResource = runtimeConfig.public.authModule.endpoints.develop_token
+    const endpointResource = runtimeConfig.public.authModule.endpoints.develop_token;
 
     return useCreate<DevelopSignInResponse, DevelopSignInRequest>({
         customResource: endpointResource,
