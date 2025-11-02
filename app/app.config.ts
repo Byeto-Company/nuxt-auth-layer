@@ -8,7 +8,7 @@ declare global {
 declare module "@nuxt/schema" {
     interface AppConfig {
         appAuth?: {
-            unauthorizedEvent?: (error: ApiError) => void;
+            unauthorizedEvent?: (error: ApiError) => void
         };
     }
     interface AppConfigInput {
