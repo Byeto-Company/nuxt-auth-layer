@@ -1,5 +1,5 @@
 {
-    "name": "nuxt-auth-layer",
+    "name": "@byeto/nuxt-auth-layer",
     "type": "module",
     "version": "1.0.0",
     "main": "./nuxt.config.ts",
