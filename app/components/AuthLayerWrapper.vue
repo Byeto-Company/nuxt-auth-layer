@@ -3,7 +3,7 @@
 // types
 
 type Props = {
-    checkOnServerPrefetch?: boolean,
+    checkOnServerPrefetch?: boolean
 }
 
 // props
