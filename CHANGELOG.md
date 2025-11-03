@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/Byeto-Company/nuxt-auth-layer/compare/v1.2.0...v1.2.1) (2025-11-03)
+
+
+### Bug Fixes
+
+* Rename package name ([202b72d](https://github.com/Byeto-Company/nuxt-auth-layer/commit/202b72d329d1764845b690cf21bbc69db167b1b1))
+
 # [1.2.0](https://github.com/Byeto-Company/nuxt-auth-layer/compare/v1.1.0...v1.2.0) (2025-11-03)
 
 
