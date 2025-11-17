@@ -31,6 +31,8 @@
         "vue": "latest"
     },
     "dependencies": {
+        "@byeto/nuxt-api-layer": "^1.0.0",
+        "@byeto/nuxt-utils-layer": "^1.0.0",
         "@internationalized/date": "^3.8.2",
         "@nuxtjs/i18n": "^10.0.6",
         "@tanstack/vue-query": "^5.85.5",
