@@ -110,7 +110,7 @@ const signOutHandler = async () => {
                     {{ isDevelopSignInPending ? "Loading..." : "Sign In With Develop Token" }}
                 </button>
                 <button
-                    v-if="!isLoggedIn"
+                    v-if="isLoggedIn"
                     class="bg-rose-400 px-4 py-2 rounded-lg"
                     :class="
                         isDevelopSignInPending
