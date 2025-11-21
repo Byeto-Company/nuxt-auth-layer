@@ -1,3 +1,19 @@
+# [1.3.0](https://github.com/Byeto-Company/nuxt-auth-layer/compare/v1.2.1...v1.3.0) (2025-11-21)
+
+
+### Bug Fixes
+
+* Add authorization headers to logout request ([9dcb1e4](https://github.com/Byeto-Company/nuxt-auth-layer/commit/9dcb1e4551fcefde64e5fe3cba806994bf49f9a5))
+* Fix logout button condition ([b41d656](https://github.com/Byeto-Company/nuxt-auth-layer/commit/b41d6566f325c767b842e8e45d64795d0d6060e2))
+* Fix logout problem ([9cba74f](https://github.com/Byeto-Company/nuxt-auth-layer/commit/9cba74fcf045af30e5980fc7a1181ea03096e25a))
+* Read tokens from onSuccess response ([0577cbf](https://github.com/Byeto-Company/nuxt-auth-layer/commit/0577cbfd59e961ee3f6516a3ec65a39a3eac198b))
+* Update compatibilityDate ([f800aeb](https://github.com/Byeto-Company/nuxt-auth-layer/commit/f800aeb12971fe2c26680edccf21e6725e39051b))
+
+
+### Features
+
+* Connect api layer and utils layer to their package ([fca893a](https://github.com/Byeto-Company/nuxt-auth-layer/commit/fca893a2376b999f639e3d6d346c63016670341d))
+
 ## [1.2.1](https://github.com/Byeto-Company/nuxt-auth-layer/compare/v1.2.0...v1.2.1) (2025-11-03)
 
 
