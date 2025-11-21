@@ -13,6 +13,7 @@ export default defineNuxtConfig({
     },
     authModule: {
         internalPage: true,
+        otpCount: 4,
         endpoints: {
             develop_token: {
                 name: "",
