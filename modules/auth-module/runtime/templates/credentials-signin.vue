@@ -121,7 +121,7 @@ const handleLogin = async () => {
 
 <template>
     <div
-        class="bg-slate-900 w-full h-svh flex-center"
+        class="bg-slate-900 w-full h-svh flex justify-center items-center"
         dir="rtl"
     >
         <div class="w-[500px] bg-slate-800 rounded-2xl px-6 pt-20 pb-6">
