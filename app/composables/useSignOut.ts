@@ -4,18 +4,12 @@ export type SignOutRequest = {
     refresh_token: string;
 };
 
-/**
- * Composable for signing out a user.
- * Wraps `useCreate` with the logout API endpoint.
- *
- * @returns {Object} A mutation object from `useCreate` for signing out
- * @module composables/useSignOut
- */
 const useSignOut = () => {
     const runtimeConfig = useRuntimeConfig();
     const endpointResource = runtimeConfig.public.authModule.endpoints.logout;
 
     return useCreate<unknown, SignOutRequest>({
+        authorization : true,
         customResource: endpointResource,
     });
 };
