@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/Byeto-Company/nuxt-auth-layer/compare/v1.3.0...v1.3.1) (2025-11-23)
+
+
+### Bug Fixes
+
+* Improve logout code ([e9b5358](https://github.com/Byeto-Company/nuxt-auth-layer/commit/e9b53581546e0febfed105aa86d899dd5968533f))
+
 # [1.3.0](https://github.com/Byeto-Company/nuxt-auth-layer/compare/v1.2.1...v1.3.0) (2025-11-21)
 
 
