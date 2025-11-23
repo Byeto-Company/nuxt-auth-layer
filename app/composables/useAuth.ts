@@ -71,11 +71,14 @@ const useAuth = () => {
                             const err = e as AxiosError;
 
                             if (err?.status && err.status >= 400) {
-                                logout();
+                                await logout();
                             }
+
+                            return false;
                         }
                     } else {
-                        logout();
+                        await logout();
+                        return false;
                     }
                 }
 
@@ -96,14 +99,15 @@ const useAuth = () => {
                     const err = e as AxiosError;
 
                     if (err?.status && err.status >= 400) {
-                        logout();
+                        await logout();
                     }
+
+                    return false;
                 }
             } else {
-                logout();
+                await logout();
+                return false;
             }
-
-            return false;
         }
     };
 
